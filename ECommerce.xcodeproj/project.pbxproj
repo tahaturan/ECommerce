@@ -27,6 +27,7 @@
 		5F650CC22A12602D0088B1CD /* CategoriesPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CC12A12602D0088B1CD /* CategoriesPageVC.swift */; };
 		5F650CC42A126B740088B1CD /* BasketPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CC32A126B740088B1CD /* BasketPageVC.swift */; };
 		5F650CC62A126B950088B1CD /* ProfilePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CC52A126B950088B1CD /* ProfilePageVC.swift */; };
+		5F650CC82A126EC10088B1CD /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CC72A126EC10088B1CD /* ApplicationConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		5F650CC12A12602D0088B1CD /* CategoriesPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPageVC.swift; sourceTree = "<group>"; };
 		5F650CC32A126B740088B1CD /* BasketPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPageVC.swift; sourceTree = "<group>"; };
 		5F650CC52A126B950088B1CD /* ProfilePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageVC.swift; sourceTree = "<group>"; };
+		5F650CC72A126EC10088B1CD /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				5F650CBD2A1257270088B1CD /* SegueIdConstant.swift */,
+				5F650CC72A126EC10088B1CD /* ApplicationConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F650CC82A126EC10088B1CD /* ApplicationConstants.swift in Sources */,
 				5F650CBB2A1250350088B1CD /* SignUpVC.swift in Sources */,
 				5F650C7C2A121E7A0088B1CD /* LogInPageVC.swift in Sources */,
 				5F650CC02A1260080088B1CD /* HomePageVC.swift in Sources */,
