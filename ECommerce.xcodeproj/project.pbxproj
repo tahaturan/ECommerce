@@ -25,6 +25,8 @@
 		5F650CBE2A1257270088B1CD /* SegueIdConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CBD2A1257270088B1CD /* SegueIdConstant.swift */; };
 		5F650CC02A1260080088B1CD /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CBF2A1260080088B1CD /* HomePageVC.swift */; };
 		5F650CC22A12602D0088B1CD /* CategoriesPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CC12A12602D0088B1CD /* CategoriesPageVC.swift */; };
+		5F650CC42A126B740088B1CD /* BasketPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CC32A126B740088B1CD /* BasketPageVC.swift */; };
+		5F650CC62A126B950088B1CD /* ProfilePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CC52A126B950088B1CD /* ProfilePageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		5F650CBD2A1257270088B1CD /* SegueIdConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdConstant.swift; sourceTree = "<group>"; };
 		5F650CBF2A1260080088B1CD /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
 		5F650CC12A12602D0088B1CD /* CategoriesPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPageVC.swift; sourceTree = "<group>"; };
+		5F650CC32A126B740088B1CD /* BasketPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPageVC.swift; sourceTree = "<group>"; };
+		5F650CC52A126B950088B1CD /* ProfilePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,9 +157,11 @@
 			children = (
 				5F650C7B2A121E7A0088B1CD /* LogInPageVC.swift */,
 				5F650CBA2A1250350088B1CD /* SignUpVC.swift */,
-				5F650CAC2A12204F0088B1CD /* Delegate */,
 				5F650CBF2A1260080088B1CD /* HomePageVC.swift */,
 				5F650CC12A12602D0088B1CD /* CategoriesPageVC.swift */,
+				5F650CC32A126B740088B1CD /* BasketPageVC.swift */,
+				5F650CC52A126B950088B1CD /* ProfilePageVC.swift */,
+				5F650CAC2A12204F0088B1CD /* Delegate */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,8 +348,10 @@
 				5F650CBB2A1250350088B1CD /* SignUpVC.swift in Sources */,
 				5F650C7C2A121E7A0088B1CD /* LogInPageVC.swift in Sources */,
 				5F650CC02A1260080088B1CD /* HomePageVC.swift in Sources */,
+				5F650CC62A126B950088B1CD /* ProfilePageVC.swift in Sources */,
 				5F650CC22A12602D0088B1CD /* CategoriesPageVC.swift in Sources */,
 				5F650CBE2A1257270088B1CD /* SegueIdConstant.swift in Sources */,
+				5F650CC42A126B740088B1CD /* BasketPageVC.swift in Sources */,
 				5F650C782A121E7A0088B1CD /* AppDelegate.swift in Sources */,
 				5F650C7A2A121E7A0088B1CD /* SceneDelegate.swift in Sources */,
 			);

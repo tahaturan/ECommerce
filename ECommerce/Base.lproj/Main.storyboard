@@ -199,6 +199,22 @@
             </objects>
             <point key="canvasLocation" x="131" y="601"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="0zN-bV-fPL">
+            <objects>
+                <viewController id="HqI-bs-OQm" customClass="ProfilePageVC" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ct0-vl-Qzn">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fJd-c7-P2A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" id="jag-66-m63"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sxm-Kp-Teb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="1623"/>
+        </scene>
         <!--Categories-->
         <scene sceneID="AAm-BK-TDR">
             <objects>
@@ -214,6 +230,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndp-au-Gzb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1923" y="232"/>
+        </scene>
+        <!--Basket-->
+        <scene sceneID="V6E-E6-tiY">
+            <objects>
+                <viewController id="Xjn-TU-tCn" customClass="BasketPageVC" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EFe-Nn-c0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gxh-Zh-dkl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Basket" image="basketIcon" id="Anf-dM-zKb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ALb-X5-DXh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="927"/>
         </scene>
         <!--Home-->
         <scene sceneID="RKL-Vv-wig">
@@ -243,6 +275,8 @@
                     <connections>
                         <segue destination="WkR-Sk-wEH" kind="relationship" relationship="viewControllers" id="3HA-Db-aHt"/>
                         <segue destination="rdB-Yb-1gM" kind="relationship" relationship="viewControllers" id="ZPI-Qf-fOi"/>
+                        <segue destination="Xjn-TU-tCn" kind="relationship" relationship="viewControllers" id="pyq-Rf-96q"/>
+                        <segue destination="HqI-bs-OQm" kind="relationship" relationship="viewControllers" id="zVy-ZU-4W4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6Z-Xi-CcU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -252,9 +286,11 @@
     </scenes>
     <resources>
         <image name="appleIcon" width="32" height="32"/>
+        <image name="basketIcon" width="32" height="32"/>
         <image name="categoriesIcon" width="32" height="32"/>
         <image name="googleIcon" width="24" height="24"/>
         <image name="homeIcon" width="32" height="32"/>
+        <image name="profileIcon" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
