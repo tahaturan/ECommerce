@@ -19,6 +19,7 @@ class LogInPageVC: UIViewController {
     }
     
     @IBAction func loginButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: SegueIdConstant.homePage, sender: nil)
     }
     
     

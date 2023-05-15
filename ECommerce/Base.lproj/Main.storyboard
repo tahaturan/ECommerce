@@ -91,6 +91,7 @@
                                 <state key="normal" title="Create Account"/>
                                 <connections>
                                     <action selector="createAccountButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XnQ-0m-A8N"/>
+                                    <segue destination="1VG-k3-X1a" kind="presentation" id="evR-Ht-7cd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -121,6 +122,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="qdC-gs-qmL" id="yJq-N6-qEE"/>
                         <outlet property="passwordTextField" destination="JUd-z7-99d" id="F74-kI-v7Q"/>
+                        <segue destination="e2W-5d-6Hb" kind="presentation" identifier="toHomePageVC" modalPresentationStyle="fullScreen" id="gTE-R3-KZP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -132,11 +134,11 @@
             <objects>
                 <viewController id="1VG-k3-X1a" customClass="SignUpVC" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xTn-GI-fHu">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oaa-V2-UP7">
-                                <rect key="frame" x="20" y="259" width="353" height="50"/>
+                                <rect key="frame" x="20" y="200" width="353" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bMY-l7-pfJ"/>
                                 </constraints>
@@ -144,7 +146,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dJa-UN-w2k">
-                                <rect key="frame" x="20" y="354" width="353" height="50"/>
+                                <rect key="frame" x="20" y="295" width="353" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eNR-mS-ybN"/>
                                 </constraints>
@@ -152,7 +154,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iao-Qr-wEZ">
-                                <rect key="frame" x="20" y="444" width="353" height="45"/>
+                                <rect key="frame" x="20" y="385" width="353" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="UQe-vA-kXR"/>
                                 </constraints>
@@ -166,7 +168,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SignUp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkH-li-C6p">
-                                <rect key="frame" x="156.66666666666666" y="181" width="80" height="30"/>
+                                <rect key="frame" x="156.66666666666666" y="122" width="80" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -195,35 +197,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DvX-d4-jve" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="558"/>
+            <point key="canvasLocation" x="131" y="601"/>
         </scene>
-        <!--Item 2-->
+        <!--Categories-->
         <scene sceneID="AAm-BK-TDR">
             <objects>
-                <viewController id="rdB-Yb-1gM" sceneMemberID="viewController">
+                <viewController id="rdB-Yb-1gM" customClass="CategoriesPageVC" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LBh-ba-CUp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="EUy-0h-t4o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="emT-c0-nxE"/>
+                    <tabBarItem key="tabBarItem" title="Categories" image="categoriesIcon" id="emT-c0-nxE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndp-au-Gzb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1923" y="232"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="RKL-Vv-wig">
             <objects>
-                <viewController id="WkR-Sk-wEH" sceneMemberID="viewController">
+                <viewController id="WkR-Sk-wEH" customClass="HomePageVC" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aku-9M-73x">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="KBM-bb-vfk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="xmP-dj-qhg"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeIcon" id="xmP-dj-qhg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5E-yI-LJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,7 +252,9 @@
     </scenes>
     <resources>
         <image name="appleIcon" width="32" height="32"/>
+        <image name="categoriesIcon" width="32" height="32"/>
         <image name="googleIcon" width="24" height="24"/>
+        <image name="homeIcon" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

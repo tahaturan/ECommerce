@@ -22,6 +22,9 @@
 		5F650CB52A1237840088B1CD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5F650CB42A1237840088B1CD /* FirebaseFirestore */; };
 		5F650CB72A1237840088B1CD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5F650CB62A1237840088B1CD /* FirebaseStorage */; };
 		5F650CBB2A1250350088B1CD /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CBA2A1250350088B1CD /* SignUpVC.swift */; };
+		5F650CBE2A1257270088B1CD /* SegueIdConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CBD2A1257270088B1CD /* SegueIdConstant.swift */; };
+		5F650CC02A1260080088B1CD /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CBF2A1260080088B1CD /* HomePageVC.swift */; };
+		5F650CC22A12602D0088B1CD /* CategoriesPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F650CC12A12602D0088B1CD /* CategoriesPageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		5F650C9A2A121E7A0088B1CD /* ECommerceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECommerceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5F650CAD2A12361D0088B1CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F650CBA2A1250350088B1CD /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		5F650CBD2A1257270088B1CD /* SegueIdConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdConstant.swift; sourceTree = "<group>"; };
+		5F650CBF2A1260080088B1CD /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
+		5F650CC12A12602D0088B1CD /* CategoriesPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 		5F650C762A121E7A0088B1CD /* ECommerce */ = {
 			isa = PBXGroup;
 			children = (
+				5F650CBC2A1256940088B1CD /* Constants */,
 				5F650CAB2A121FFC0088B1CD /* Service */,
 				5F650CAA2A121FF00088B1CD /* Model */,
 				5F650CA92A121FE00088B1CD /* ViewModel */,
@@ -147,6 +154,8 @@
 				5F650C7B2A121E7A0088B1CD /* LogInPageVC.swift */,
 				5F650CBA2A1250350088B1CD /* SignUpVC.swift */,
 				5F650CAC2A12204F0088B1CD /* Delegate */,
+				5F650CBF2A1260080088B1CD /* HomePageVC.swift */,
+				5F650CC12A12602D0088B1CD /* CategoriesPageVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +188,14 @@
 				5F650C792A121E7A0088B1CD /* SceneDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		5F650CBC2A1256940088B1CD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5F650CBD2A1257270088B1CD /* SegueIdConstant.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +341,9 @@
 			files = (
 				5F650CBB2A1250350088B1CD /* SignUpVC.swift in Sources */,
 				5F650C7C2A121E7A0088B1CD /* LogInPageVC.swift in Sources */,
+				5F650CC02A1260080088B1CD /* HomePageVC.swift in Sources */,
+				5F650CC22A12602D0088B1CD /* CategoriesPageVC.swift in Sources */,
+				5F650CBE2A1257270088B1CD /* SegueIdConstant.swift in Sources */,
 				5F650C782A121E7A0088B1CD /* AppDelegate.swift in Sources */,
 				5F650C7A2A121E7A0088B1CD /* SceneDelegate.swift in Sources */,
 			);
