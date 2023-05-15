@@ -103,9 +103,6 @@
 				5F650CAA2A121FF00088B1CD /* Model */,
 				5F650CA92A121FE00088B1CD /* ViewModel */,
 				5F650CA72A121FCC0088B1CD /* View */,
-				5F650C772A121E7A0088B1CD /* AppDelegate.swift */,
-				5F650C792A121E7A0088B1CD /* SceneDelegate.swift */,
-				5F650C7B2A121E7A0088B1CD /* ViewController.swift */,
 				5F650C7D2A121E7A0088B1CD /* Main.storyboard */,
 				5F650C802A121E7A0088B1CD /* Assets.xcassets */,
 				5F650C822A121E7A0088B1CD /* LaunchScreen.storyboard */,
@@ -134,6 +131,8 @@
 		5F650CA72A121FCC0088B1CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5F650C7B2A121E7A0088B1CD /* ViewController.swift */,
+				5F650CAC2A12204F0088B1CD /* Delegate */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +156,15 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		5F650CAC2A12204F0088B1CD /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				5F650C772A121E7A0088B1CD /* AppDelegate.swift */,
+				5F650C792A121E7A0088B1CD /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
