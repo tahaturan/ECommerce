@@ -12,7 +12,9 @@ class HomePageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        WebService().getProduct(url: WebServiceUrl.url!) { produtList in
+            print(produtList ?? "")
+        }
     }
     
 
