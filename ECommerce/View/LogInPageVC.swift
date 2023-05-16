@@ -21,12 +21,56 @@ class LogInPageVC: UIViewController {
     }
     
     @IBAction func loginButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: SegueIdConstant.homePage, sender: nil)
+        logInApp()
     }
     
     
     @IBAction func googleLoginButtonClicked(_ sender: Any) {
+        googleSignIn()
+    }
+    
+    
+    @IBAction func appleLoginButtonClicked(_ sender: Any) {
+    }
+    
+
+    
+    @IBAction func createAccountButtonClicked(_ sender: Any) {
+    }
+    
+
+}
+
+
+
+//MARK: - LogIn Button
+extension LogInPageVC{
+    func logInApp()  {
         
+        if emailTextField.text != "" && passwordTextField.text != "" {
+            
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { result , error in
+                
+                if error != nil {
+                    ApplicationConstants.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error", viewController: self)
+                }else{
+                    self.performSegue(withIdentifier: SegueIdConstant.logInPageTohomePage, sender: nil)
+                }
+                
+            }
+            
+        }else{
+            ApplicationConstants.makeAlert(title: "Error", message: "email/password ?", viewController: self)
+        }
+        
+        
+    }
+}
+
+
+//MARK: -Google SignIn
+extension LogInPageVC{
+    func googleSignIn()  {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
 
         // Create Google Sign In configuration object.
@@ -52,21 +96,9 @@ class LogInPageVC: UIViewController {
                 if error != nil {
                     ApplicationConstants.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error", viewController: self)
                 }else{
-                    self.performSegue(withIdentifier: SegueIdConstant.homePage, sender: nil)
+                    self.performSegue(withIdentifier: SegueIdConstant.logInPageTohomePage, sender: nil)
                 }
             }
         }
     }
-    
-    
-    @IBAction func appleLoginButtonClicked(_ sender: Any) {
-    }
-    
-
-    
-    @IBAction func createAccountButtonClicked(_ sender: Any) {
-    }
-    
-
 }
-
