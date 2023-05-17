@@ -19,6 +19,8 @@ class HomePageVC: UIViewController {
     
     var isSearch = false
     
+    var selectedProduct : ProductViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +31,15 @@ class HomePageVC: UIViewController {
         
         searchBar.delegate = self
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdConstant.homePageToDetailPage {
+            let destinationVC = segue.destination as! DetailsVC
+            
+            destinationVC.product = selectedProduct
+
+        }
+    }
     }
 
 
@@ -91,6 +102,21 @@ extension HomePageVC : UICollectionViewDataSource , UICollectionViewDelegate {
         }
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if isSearch {
+            let product = searchBarViewModel.productAtIndex(indexPath.row)
+            selectedProduct = product
+        }else{
+            let product = productListViewModel.productAtIndex(indexPath.row)
+            selectedProduct = product
+        }
+        
+
+        
+        performSegue(withIdentifier: SegueIdConstant.homePageToDetailPage, sender: nil)
     }
     
     

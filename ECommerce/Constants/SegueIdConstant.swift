@@ -11,4 +11,5 @@ import Foundation
 class SegueIdConstant {
     static let logInPageTohomePage:String = "toHomePageVC"
     static let signUpToLoginVC:String = "SignUpToLoginVC"
+    static let homePageToDetailPage = "homePageToDetailsVC"
 }
