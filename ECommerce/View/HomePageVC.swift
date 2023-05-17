@@ -8,6 +8,7 @@
 import UIKit
 import SDWebImage
 
+
 class HomePageVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!

@@ -96,9 +96,18 @@ extension LogInPageVC{
                 if error != nil {
                     ApplicationConstants.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error", viewController: self)
                 }else{
+                    
+                    let fireStore = Firestore.firestore()
+                    
+                    let userDictionary = ["email":user.profile!.email, "name":user.profile!.name] as [String : Any]
+                    
+                    fireStore.collection("UserInfo").addDocument(data: userDictionary)
+      
                     self.performSegue(withIdentifier: SegueIdConstant.logInPageTohomePage, sender: nil)
                 }
             }
+            
+            
         }
     }
 }

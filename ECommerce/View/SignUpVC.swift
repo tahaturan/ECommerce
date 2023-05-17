@@ -14,6 +14,10 @@ class SignUpVC: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,11 +36,18 @@ class SignUpVC: UIViewController {
 extension SignUpVC{
     
     func signUpFirebase() {
-        if emailTextField.text != "" && passwordTextField.text != ""{
+        if emailTextField.text != "" && passwordTextField.text != "" && nameTextField.text != ""{
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { result , error in
                 if error != nil {
                     ApplicationConstants.makeAlert(title: "Error", message: error?.localizedDescription ?? "", viewController: self)
                 }else{
+                    
+                    let fireStore = Firestore.firestore()
+                    
+                    let userDictionary = ["email":self.emailTextField.text! , "name":self.nameTextField.text!] as [String : Any]
+                    
+                    fireStore.collection("UserInfo").addDocument(data: userDictionary)
+                    
                     self.performSegue(withIdentifier: SegueIdConstant.signUpToLoginVC, sender: nil)
                 }
             }
