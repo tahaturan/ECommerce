@@ -345,6 +345,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="homeIcon" id="xmP-dj-qhg"/>
                     <connections>
                         <outlet property="collectionView" destination="ugE-mM-6pS" id="7qB-wq-MKI"/>
+                        <outlet property="searchBar" destination="aiP-o4-y8c" id="elL-X7-lB4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5E-yI-LJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

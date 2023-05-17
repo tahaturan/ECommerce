@@ -13,6 +13,12 @@ class HomePageVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     private var productListViewModel:ProductListViewModel!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var searchBarViewModel:SearchBarViewModel = SearchBarViewModel(productModelList: [ProductModel]())
+    
+    var isSearch = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +26,8 @@ class HomePageVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         getDataProductList()
+        
+        searchBar.delegate = self
         }
     }
 
@@ -52,18 +60,36 @@ extension HomePageVC {
 //MARK: - CollectionView islemleri
 extension HomePageVC : UICollectionViewDataSource , UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.productListViewModel == nil ?  0:self.productListViewModel.numberOfRowsInSection()
+        
+        if isSearch {
+            return searchBarViewModel.productModelList.count
+        }else{
+            return self.productListViewModel == nil ?  0:self.productListViewModel.numberOfRowsInSection()
+        }
+        
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as! ProductCollectionViewCell
         
-        let product = self.productListViewModel.productAtIndex(indexPath.row)
+      
         
-        cell.titleLabel.text = "\(product.title)"
-        cell.priceLabel.text = "\(product.price)$"
-        cell.rateLabel.text = "\(product.rating.rate)"
-        cell.productImageView.sd_setImage(with: URL(string: product.image))
+        if isSearch{
+            let product = self.searchBarViewModel.productAtIndex(indexPath.row)
+            cell.titleLabel.text = "\(product.title)"
+            cell.priceLabel.text = "\(product.price)$"
+            cell.rateLabel.text = "\(product.rating.rate)"
+            cell.productImageView.sd_setImage(with: URL(string: product.image))
+        }else{
+            let product = self.productListViewModel.productAtIndex(indexPath.row)
+            cell.titleLabel.text = "\(product.title)"
+            cell.priceLabel.text = "\(product.price)$"
+            cell.rateLabel.text = "\(product.rating.rate)"
+            cell.productImageView.sd_setImage(with: URL(string: product.image))
+        }
+
         return cell
     }
     
@@ -92,4 +118,26 @@ extension HomePageVC{
         
         
     }
+}
+
+
+//MARK: -SearchBar islemleri
+
+extension HomePageVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("arama sonucu: \(searchText)")
+        
+        if searchText == "" {
+            isSearch = false
+        }else{
+            isSearch = true
+            
+            searchBarViewModel.productModelList = productListViewModel.productModelList.filter({$0.title.lowercased().contains(searchText.lowercased())})
+        }
+
+        
+        collectionView.reloadData()
+    }
+    
 }
