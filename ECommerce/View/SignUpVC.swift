@@ -43,8 +43,8 @@ extension SignUpVC{
                 }else{
                     
                     let fireStore = Firestore.firestore()
-                    
-                    let userDictionary = ["email":self.emailTextField.text! , "name":self.nameTextField.text!] as [String : Any]
+                    let user = Auth.auth().currentUser
+                    let userDictionary = ["userid":user!.uid,"email":self.emailTextField.text! , "name":self.nameTextField.text!] as [String : Any]
                     
                     fireStore.collection("UserInfo").addDocument(data: userDictionary)
                     
