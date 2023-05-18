@@ -15,4 +15,7 @@ class ApplicationConstants {
         alert.addAction(okButton)
         viewController.present(alert, animated: true)
     }
+    
+    
+    static let defaultImageUrl:String = "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-a9a9f.appspot.com/o/userProfileImage%2FdefaultProfile.png?alt=media&token=1761a66e-7672-4455-aa41-2dcdef4c5307"
 }

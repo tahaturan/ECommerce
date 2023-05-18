@@ -7,7 +7,7 @@
 
 import UIKit
 import SDWebImage
-
+import Firebase
 
 class HomePageVC: UIViewController {
     
@@ -31,6 +31,8 @@ class HomePageVC: UIViewController {
         getDataProductList()
         
         searchBar.delegate = self
+        
+        getUserInfo()
         }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -167,4 +169,35 @@ extension HomePageVC: UISearchBarDelegate {
         collectionView.reloadData()
     }
     
+}
+
+//MARK: -Kullanici bilgilerini alma GetUserInfo
+extension HomePageVC{
+    func getUserInfo()  {
+        
+        let fireStoreDatabase = Firestore.firestore()
+        let currentUser = Auth.auth().currentUser
+        fireStoreDatabase.collection("UserInfo").whereField("userid", isEqualTo: currentUser!.uid).addSnapshotListener { snapshot, error in
+            if error != nil {
+                ApplicationConstants.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error", viewController: self)
+            }else{
+                if snapshot?.isEmpty == false && snapshot != nil {
+                    for document in snapshot!.documents{
+                        if let userName = document.get("name") as? String {
+                            if let userEmail = document.get("email") as? String {
+                                if let userImage = document.get("userimage") as? String {
+                                    if let userId = document.get("userid") as? String {
+                                        UserSingleton.sharedUserInfo.name = userName
+                                        UserSingleton.sharedUserInfo.email = userEmail
+                                        UserSingleton.sharedUserInfo.userimage = userImage
+                                        UserSingleton.sharedUserInfo.userid = userId
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F047CA52A160D2600431521 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F047CA42A160D2600431521 /* UserSingleton.swift */; };
 		5F32967E2A13744E007D42EF /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5F32967D2A13744E007D42EF /* GoogleSignIn */; };
 		5F3296802A13744E007D42EF /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5F32967F2A13744E007D42EF /* GoogleSignInSwift */; };
 		5F3296822A138F5E007D42EF /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3296812A138F5E007D42EF /* ProductModel.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F047CA42A160D2600431521 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 		5F3296812A138F5E007D42EF /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		5F3296832A13905B007D42EF /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		5F3296852A13946D007D42EF /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				5F3296812A138F5E007D42EF /* ProductModel.swift */,
+				5F047CA42A160D2600431521 /* UserSingleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				5F650CC82A126EC10088B1CD /* ApplicationConstants.swift in Sources */,
 				5F650CBB2A1250350088B1CD /* SignUpVC.swift in Sources */,
 				5F3296D52A14BD4E007D42EF /* ProductCollectionViewCell.swift in Sources */,
+				5F047CA52A160D2600431521 /* UserSingleton.swift in Sources */,
 				5F650C7C2A121E7A0088B1CD /* LogInPageVC.swift in Sources */,
 				5F650CC02A1260080088B1CD /* HomePageVC.swift in Sources */,
 				5F3296862A13946D007D42EF /* HomePageViewModel.swift in Sources */,
