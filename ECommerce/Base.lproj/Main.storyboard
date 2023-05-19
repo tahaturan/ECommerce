@@ -273,6 +273,18 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="146" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N2X-oJ-ART">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="cMU-SU-U69">
+                                    <rect key="frame" x="0.0" y="224" width="393" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.1450980392" green="0.72156862749999995" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Confirm Cart">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="ConfirmCardButtonClicked:" destination="Xjn-TU-tCn" eventType="touchUpInside" id="vGh-WE-qPK"/>
+                                    </connections>
+                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="productTableCell" rowHeight="146" id="uwJ-ez-X8B" customClass="BasketTableViewCell" customModule="ECommerce" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="146"/>
@@ -332,6 +344,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Basket" image="basketIcon" id="Anf-dM-zKb"/>
                     <connections>
+                        <outlet property="ConfirmCardButton" destination="cMU-SU-U69" id="fyP-pv-M9B"/>
                         <outlet property="basketTableView" destination="N2X-oJ-ART" id="Yos-wr-cjS"/>
                     </connections>
                 </viewController>

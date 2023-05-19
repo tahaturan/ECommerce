@@ -11,7 +11,11 @@ import Firebase
 class BasketPageVC: UIViewController {
     
     @IBOutlet weak var basketTableView: UITableView!
+    
+    @IBOutlet weak var ConfirmCardButton: UIButton!
+    
     var userProductList = [BasketProductModel]()
+    var totalPrice = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +27,11 @@ class BasketPageVC: UIViewController {
         
         
     }
-
+    
+    @IBAction func ConfirmCardButtonClicked(_ sender: Any) {
+        
+    }
+    
 }
 
 
@@ -74,6 +82,9 @@ extension BasketPageVC{
                                 let userProduct = BasketProductModel(product: product)
                                 self.userProductList.append(userProduct)
                                 self.tabBarItem.badgeValue = String(self.userProductList.count)
+                                self.totalPrice = self.totalPriceCalculate()
+                                let buttonString:String = "Confirm Cart -> \(self.totalPrice)"
+                                self.ConfirmCardButton.setTitle(buttonString, for: UIControl.State.normal)
                             }
                             
                         }
@@ -86,4 +97,22 @@ extension BasketPageVC{
             }
         }
     }
+}
+
+//MARK: -Total Price -- Toplam Tutar Hesaplama islemleri
+extension BasketPageVC {
+    
+    func totalPriceCalculate() -> Double {
+        
+        var total = 0.0
+        
+        for product in userProductList{
+            
+           total += product.product["price"] as! Double
+        }
+        
+        return total
+    }
+    
+    
 }
