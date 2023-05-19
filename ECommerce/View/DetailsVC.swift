@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class DetailsVC: UIViewController {
     
@@ -62,7 +63,7 @@ extension DetailsVC{
         
         let fireStore = Firestore.firestore()
         
-        let productDict = ["id":product.id ,"title":product.title ,"price":product.price ,"image":product.image] as [String : Any]
+        let productDict = ["id":product.id ,"title":product.title ,"price":product.price ,"image":product.image , "count":1] as [String : Any]
         
         fireStore.collection("Basket").whereField("userid", isEqualTo: UserSingleton.sharedUserInfo.userid).getDocuments { snapshot , error in
             if error != nil {
@@ -70,26 +71,56 @@ extension DetailsVC{
             }else{
                 if snapshot?.isEmpty == false && snapshot != nil {
                     for document in snapshot!.documents{
-                        
+                       
                         let documentId = document.documentID
-                        
                         if var productArray = document.get("productArray") as? [[String : Any]]{
-                            productArray.append(productDict)
                             
-                            let additionalDictionary = ["productArray" : productArray] as [String : Any]
-                            
-                            fireStore.collection("Basket").document(documentId).setData(additionalDictionary, merge: true) { error in
-                                if error == nil {
-                                    // hata yoksa
-                                    ApplicationConstants.makeAlert(title: "Basarili", message: "Urun Sepete Eklendi", viewController: self)
+                            //urun daha once eklendi mi kontrolu
+                            if productArray.contains(where: {$0["id"] as! Int == self.product.id }){
+                                for product in productArray {
+                                    
+                                    if product["id"] as! Int == self.product.id {
+                                        
+                                        productArray.removeAll(where: { $0["id"] as! Int == product["id"] as! Int })
+                                        
+                                        let defaultCount = product["count"] as! Int
+                                        let newCount = defaultCount + 1
+                                      
+                                        
+                                        let defaultPrice = product["price"] as! Double
+                                        let newPrice = defaultPrice + self.product.price
+                                        
+                                        
+                                     
+                                        let newProductDict = ["id":self.product.id ,"title":self.product.title ,"price":newPrice ,"image":self.product.image , "count":newCount] as [String : Any]
+                                        productArray.append(newProductDict)
+                                        let additionalDictionary = ["productArray" : productArray] as [String : Any]
+                                        fireStore.collection("Basket").document(documentId).setData(additionalDictionary, merge: true) { error in
+                                            if error == nil {
+                                                // hata yoksa
+                                                ApplicationConstants.makeAlert(title: "Basarili", message: "Urun Sepete Eklendi", viewController: self)
+                                            }
+                                        }
+                                    }
+                                }
+ 
+                            }else{
+                                productArray.append(productDict)
+                                let additionalDictionary = ["productArray" : productArray] as [String : Any]
+                                
+                                fireStore.collection("Basket").document(documentId).setData(additionalDictionary, merge: true) { error in
+                                    if error == nil {
+                                        // hata yoksa
+                                        ApplicationConstants.makeAlert(title: "Basarili", message: "Urun Sepete Eklendi", viewController: self)
+                                        
+                                    }
                                 }
                             }
                         }
-                        
                     }
                 } else {
                     //snapshot yoksa
-                    let productDictionary = ["productArray": [["id":self.product.id ,"title":self.product.title ,"price":self.product.price ,"image":self.product.image] as [String : Any]] ,"userid":UserSingleton.sharedUserInfo.userid] as [String : Any]
+                    let productDictionary = ["productArray": [["id":self.product.id ,"title":self.product.title ,"price":self.product.price ,"image":self.product.image , "count":1] as [String : Any]] ,"userid":UserSingleton.sharedUserInfo.userid] as [String : Any]
                     
                     fireStore.collection("Basket").addDocument(data: productDictionary) { error in
                         if error != nil {
