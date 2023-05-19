@@ -14,7 +14,9 @@ class BasketPageVC: UIViewController {
     
     @IBOutlet weak var ConfirmCardButton: UIButton!
     
-    var userProductList = [BasketProductModel]()
+    let fireStoreDatabase = Firestore.firestore()
+    
+    var userProductList = [ProductViewModel]()
     var totalPrice = Double()
     
     override func viewDidLoad() {
@@ -45,15 +47,31 @@ extension BasketPageVC: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = basketTableView.dequeueReusableCell(withIdentifier: "productTableCell" , for: indexPath) as! BasketTableViewCell
         
-        let basketProduct = userProductList[indexPath.row].product
-        let price = basketProduct["price"] as! Double
-        let urlString = basketProduct["image"] as! String
-        cell.titleLabel.text = basketProduct["title"] as? String
-        cell.priceLabel.text = "\(price)$"
+        let basketProduct = userProductList[indexPath.row]
+        
+        let urlString = basketProduct.image
+        cell.titleLabel.text = basketProduct.title
+        cell.priceLabel.text = "\(basketProduct.price)$"
         cell.productImageView.sd_setImage(with: URL(string: urlString))
         
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contextualAction, view, boolValue in
+           
+            let product = self.userProductList[indexPath.row]
+            self.updateDataBase(id: product.id)
+            self.basketTableView.reloadData()
+           
+         
+            
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     
@@ -63,7 +81,7 @@ extension BasketPageVC: UITableViewDelegate , UITableViewDataSource{
 //MARK: Firebase Veri cekme islemi
 extension BasketPageVC{
     func getProductFirebase() {
-        let fireStoreDatabase = Firestore.firestore()
+        
         
         fireStoreDatabase.collection("Basket").whereField("userid", isEqualTo: UserSingleton.sharedUserInfo.userid).addSnapshotListener { snapshot , error in
             if error != nil {
@@ -78,13 +96,27 @@ extension BasketPageVC{
                         
                         if let fireProduct = document.get("productArray") as? [[String : Any]] {
                             
-                            for product in fireProduct {
-                                let userProduct = BasketProductModel(product: product)
-                                self.userProductList.append(userProduct)
-                                self.tabBarItem.badgeValue = String(self.userProductList.count)
-                                self.totalPrice = self.totalPriceCalculate()
-                                let buttonString:String = "Confirm Cart -> \(self.totalPrice)"
-                                self.ConfirmCardButton.setTitle(buttonString, for: UIControl.State.normal)
+                            if fireProduct.count > 0 {
+                                for product in fireProduct {
+                                    
+                                    let title = product["title"] as! String
+                                    let price = product["price"] as! Double
+                                    let id = product["id"] as! Int
+                                    let image = product["image"] as! String
+                                    let description = product["description"] as! String
+                                    let rate = product["rate"] as! Double
+                                    let ratingCount = product["ratingCount"] as! Int
+                                    let category = product["category"] as! String
+                                    
+                                    let createProdcutRating = Rating(rate: rate, count: ratingCount)
+                                    let createProduct = ProductModel(id: id, title: title, price: price, description: description, category: category, image: image, rating: createProdcutRating)
+                                    
+                                    self.userProductList.append(ProductViewModel(productModel: createProduct))
+                                    self.tabBarItem.badgeValue = String(self.userProductList.count)
+                                    self.totalPrice = self.totalPriceCalculate()
+                                    let buttonString:String = "Confirm Cart -> \(self.totalPrice)"
+                                    self.ConfirmCardButton.setTitle(buttonString, for: UIControl.State.normal)
+                                }
                             }
                             
                         }
@@ -106,13 +138,52 @@ extension BasketPageVC {
         
         var total = 0.0
         
-        for product in userProductList{
-            
-           total += product.product["price"] as! Double
+        if userProductList.count > 0 {
+            for product in userProductList{
+                
+                total += product.price
+            }
         }
         
         return total
     }
     
+    
+}
+
+
+
+//MARK: Sepetten veri sildinginde Firebase veritabanin guncellenmesi
+extension BasketPageVC {
+    func updateDataBase(id:Int) {
+        
+        fireStoreDatabase.collection("Basket").whereField("userid", isEqualTo: UserSingleton.sharedUserInfo.userid).addSnapshotListener { snapshot , error in
+            if error != nil {
+                ApplicationConstants.makeAlert(title: "ERROR", message: error?.localizedDescription ?? "Error!", viewController: self)
+            }else{
+                if snapshot?.isEmpty == false && snapshot != nil {
+                    for document in snapshot!.documents{
+                        
+                        let documentId = document.documentID
+                        
+                        if var productArray = document.get("productArray") as? [[String : Any]] {
+                          
+                            if productArray.count > 0 {
+                                productArray.removeAll(where: {$0["id"] as! Int == id})
+                                
+                                let newProductDict = ["productArray" : productArray] as [String : Any]
+                                
+                                self.fireStoreDatabase.collection("Basket").document(documentId).setData(newProductDict, merge: true)
+                            }
+                            
+                        }
+                        
+                     
+                    }
+                    self.basketTableView.reloadData()
+                }
+            }
+        }
+    }
     
 }
