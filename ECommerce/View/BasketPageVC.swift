@@ -27,6 +27,7 @@ class BasketPageVC: UIViewController {
         basketTableView.delegate = self
         basketTableView.dataSource = self
         getProductFirebase()
+        confirmCardButton.isHidden = true
         print("deneme")
         
         
@@ -179,7 +180,7 @@ extension BasketPageVC {
 extension BasketPageVC {
     func updateDataBase(id:Int) {
         
-        fireStoreDatabase.collection("Basket").whereField("userid", isEqualTo: UserSingleton.sharedUserInfo.userid).addSnapshotListener { snapshot , error in
+        fireStoreDatabase.collection("Basket").whereField("userid", isEqualTo: UserSingleton.sharedUserInfo.userid).getDocuments { snapshot , error in
             if error != nil {
                 ApplicationConstants.makeAlert(title: "ERROR", message: error?.localizedDescription ?? "Error!", viewController: self)
             }else{

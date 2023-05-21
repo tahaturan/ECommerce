@@ -16,6 +16,9 @@ class HomePageVC: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var helloLabel: UILabel!
+    
+    
     var searchBarViewModel:SearchBarViewModel = SearchBarViewModel(productModelList: [ProductModel]())
     
     var isSearch = false
@@ -33,6 +36,7 @@ class HomePageVC: UIViewController {
         searchBar.delegate = self
         
         getUserInfo()
+        helloLabel.text = "Merhaba"
         }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
