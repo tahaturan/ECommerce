@@ -13,4 +13,5 @@ class SegueIdConstant {
     static let signUpToLoginVC:String = "SignUpToLoginVC"
     static let homePageToDetailPage = "homePageToDetailsVC"
     static let profileToLoginPage = "profileToLogInPage"
+    static let basketToDetails = "basketVCtoDetailsVC"
 }

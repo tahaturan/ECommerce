@@ -19,6 +19,8 @@ class BasketPageVC: UIViewController {
     var userProductList = [ProductViewModel]()
     var totalPrice = 0.0
     
+    var selectedProduct : ProductViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,6 +74,24 @@ extension BasketPageVC: UITableViewDelegate , UITableViewDataSource{
         }
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let userSelect = userProductList[indexPath.row]
+        selectedProduct = userSelect
+        
+        performSegue(withIdentifier: SegueIdConstant.basketToDetails, sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdConstant.basketToDetails {
+            let destinationVC = segue.destination as! DetailsVC
+            
+            destinationVC.product = selectedProduct
+        }
     }
     
     
