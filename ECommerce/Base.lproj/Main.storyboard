@@ -344,8 +344,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Basket" image="basketIcon" id="Anf-dM-zKb"/>
                     <connections>
-                        <outlet property="ConfirmCardButton" destination="cMU-SU-U69" id="fyP-pv-M9B"/>
                         <outlet property="basketTableView" destination="N2X-oJ-ART" id="Yos-wr-cjS"/>
+                        <outlet property="confirmCardButton" destination="cMU-SU-U69" id="fyP-pv-M9B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALb-X5-DXh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

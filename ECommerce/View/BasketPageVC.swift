@@ -12,12 +12,12 @@ class BasketPageVC: UIViewController {
     
     @IBOutlet weak var basketTableView: UITableView!
     
-    @IBOutlet weak var ConfirmCardButton: UIButton!
+    @IBOutlet weak var confirmCardButton: UIButton!
     
     let fireStoreDatabase = Firestore.firestore()
     
     var userProductList = [ProductViewModel]()
-    var totalPrice = Double()
+    var totalPrice = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,8 +115,10 @@ extension BasketPageVC{
                                     self.tabBarItem.badgeValue = String(self.userProductList.count)
                                     self.totalPrice = self.totalPriceCalculate()
                                     let buttonString:String = "Confirm Cart -> \(self.totalPrice)"
-                                    self.ConfirmCardButton.setTitle(buttonString, for: UIControl.State.normal)
+                                    self.confirmCardButton.isHidden = false
+                                    self.confirmCardButton.setTitle(buttonString, for: UIControl.State.normal)
                                 }
+                            
                             }
                             
                         }
@@ -174,6 +176,13 @@ extension BasketPageVC {
                                 let newProductDict = ["productArray" : productArray] as [String : Any]
                                 
                                 self.fireStoreDatabase.collection("Basket").document(documentId).setData(newProductDict, merge: true)
+                                
+                                if productArray.count == 0 {
+                                    self.totalPrice = 0.0
+                                    self.tabBarItem.badgeValue = nil
+                                    self.confirmCardButton.isHidden = true
+                                }
+
                             }
                             
                         }
