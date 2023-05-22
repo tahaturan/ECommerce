@@ -36,7 +36,7 @@ class HomePageVC: UIViewController {
         searchBar.delegate = self
         
         getUserInfo()
-        helloLabel.text = "Merhaba"
+        helloLabel.text = "Hi"
         }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
