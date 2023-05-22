@@ -141,10 +141,10 @@ extension HomePageVC{
         
         design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
-        design.minimumInteritemSpacing = 10
-        design.minimumLineSpacing = 10
+        design.minimumInteritemSpacing = 5
+        design.minimumLineSpacing = 5
         
-        let cellWidth = (width - 30) / 2
+        let cellWidth = (width - 100) / 2
         
         design.itemSize = CGSize(width: cellWidth, height: cellWidth * 1.6)
         collectionView!.collectionViewLayout = design
