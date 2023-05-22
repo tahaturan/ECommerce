@@ -19,7 +19,7 @@ class HomePageVC: UIViewController {
     @IBOutlet weak var helloLabel: UILabel!
     
     
-    var searchBarViewModel:SearchBarViewModel = SearchBarViewModel(productModelList: [ProductModel]())
+   private var searchBarListViewModel:ProductListViewModel = ProductListViewModel(productModelList: [ProductModel]())
     
     var isSearch = false
     
@@ -80,7 +80,7 @@ extension HomePageVC : UICollectionViewDataSource , UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if isSearch {
-            return searchBarViewModel.productModelList.count
+            return searchBarListViewModel.numberOfRowsInSection()
         }else{
             return self.productListViewModel == nil ?  0:self.productListViewModel.numberOfRowsInSection()
         }
@@ -95,7 +95,7 @@ extension HomePageVC : UICollectionViewDataSource , UICollectionViewDelegate {
       
         
         if isSearch{
-            let product = self.searchBarViewModel.productAtIndex(indexPath.row)
+            let product = self.searchBarListViewModel.productAtIndex(indexPath.row)
             cell.titleLabel.text = "\(product.title)"
             cell.priceLabel.text = "\(product.price)$"
             cell.rateLabel.text = "\(product.rating.rate)"
@@ -114,7 +114,7 @@ extension HomePageVC : UICollectionViewDataSource , UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if isSearch {
-            let product = searchBarViewModel.productAtIndex(indexPath.row)
+            let product = searchBarListViewModel.productAtIndex(indexPath.row)
             selectedProduct = product
         }else{
             let product = productListViewModel.productAtIndex(indexPath.row)
@@ -166,7 +166,7 @@ extension HomePageVC: UISearchBarDelegate {
         }else{
             isSearch = true
             
-            searchBarViewModel.productModelList = productListViewModel.productModelList.filter({$0.title.lowercased().contains(searchText.lowercased())})
+            searchBarListViewModel.productModelList = productListViewModel.productModelList.filter({$0.title.lowercased().contains(searchText.lowercased())})
         }
 
         

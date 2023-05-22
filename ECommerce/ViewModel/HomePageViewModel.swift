@@ -8,7 +8,7 @@
 import Foundation
 
 struct ProductListViewModel {
-    let productModelList : [ProductModel]
+    var productModelList : [ProductModel]
     
     func numberOfRowsInSection() -> Int {
         return self.productModelList.count
