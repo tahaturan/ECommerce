@@ -60,6 +60,7 @@ extension HomePageVC {
             if let productList = productList {
                 
                 self.productListViewModel = ProductListViewModel(productModelList: productList)
+                ProductSingleton.sharedProductList.poductList = ProductListViewModel(productModelList: productList)
                 
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
@@ -144,7 +145,7 @@ extension HomePageVC{
         design.minimumInteritemSpacing = 5
         design.minimumLineSpacing = 5
         
-        let cellWidth = (width - 100) / 2
+        let cellWidth = (width - 90) / 2
         
         design.itemSize = CGSize(width: cellWidth, height: cellWidth * 1.6)
         collectionView!.collectionViewLayout = design

@@ -14,4 +14,10 @@ class SegueIdConstant {
     static let homePageToDetailPage = "homePageToDetailsVC"
     static let profileToLoginPage = "profileToLogInPage"
     static let basketToDetails = "basketVCtoDetailsVC"
+    static let categoryMens = "toCategoryMens"
+    static let categoryWomens = "toCategoryWomens"
+    static let categoryJewelery = "toCategoryJewelery"
+    static let categoryElectonics = "toCategoryElectonics"
+    static let categoryToDetails = "categoryListToDetailsVC"
+    
 }
