@@ -222,29 +222,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJc-UD-Qk7">
-                                <rect key="frame" x="156" y="408.66666666666669" width="81" height="35"/>
+                                <rect key="frame" x="156" y="768" width="81" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="LogOut"/>
                                 <connections>
                                     <action selector="logOutButtonClicked:" destination="HqI-bs-OQm" eventType="touchUpInside" id="52k-Lo-meP"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="women's clothing" translatesAutoresizingMaskIntoConstraints="NO" id="L4h-Ho-hqV">
+                                <rect key="frame" x="131" y="7" width="131" height="131"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="131" id="gFx-Wj-cfK"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fJd-c7-P2A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WJc-UD-Qk7" firstAttribute="centerY" secondItem="ct0-vl-Qzn" secondAttribute="centerY" id="3TK-3n-v1A"/>
-                            <constraint firstItem="WJc-UD-Qk7" firstAttribute="centerX" secondItem="ct0-vl-Qzn" secondAttribute="centerX" id="UjX-Vb-nxc"/>
+                            <constraint firstItem="L4h-Ho-hqV" firstAttribute="top" secondItem="fJd-c7-P2A" secondAttribute="top" constant="7" id="Dhb-RR-0bu"/>
+                            <constraint firstItem="L4h-Ho-hqV" firstAttribute="leading" secondItem="fJd-c7-P2A" secondAttribute="leading" constant="131" id="Llj-Ty-HOz"/>
+                            <constraint firstItem="L4h-Ho-hqV" firstAttribute="centerX" secondItem="ct0-vl-Qzn" secondAttribute="centerX" id="UdF-uS-DwS"/>
+                            <constraint firstItem="L4h-Ho-hqV" firstAttribute="centerX" secondItem="WJc-UD-Qk7" secondAttribute="centerX" id="f6H-fM-Jr2"/>
+                            <constraint firstItem="WJc-UD-Qk7" firstAttribute="bottom" secondItem="fJd-c7-P2A" secondAttribute="bottom" id="iem-dQ-Q5s"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" id="jag-66-m63"/>
                     <connections>
+                        <outlet property="profileImageView" destination="L4h-Ho-hqV" id="ZiP-dw-OKa"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="profileToLogInPage" modalPresentationStyle="fullScreen" id="1AE-S2-bX1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxm-Kp-Teb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018" y="669"/>
+            <point key="canvasLocation" x="1017.5572519083969" y="668.30985915492965"/>
         </scene>
         <!--Categories PageVC-->
         <scene sceneID="AAm-BK-TDR">
