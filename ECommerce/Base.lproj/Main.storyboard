@@ -223,6 +223,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJc-UD-Qk7">
                                 <rect key="frame" x="156" y="768" width="81" height="35"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="LogOut"/>
                                 <connections>
@@ -232,18 +233,63 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="women's clothing" translatesAutoresizingMaskIntoConstraints="NO" id="L4h-Ho-hqV">
                                 <rect key="frame" x="131" y="7" width="131" height="131"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="131" id="gFx-Wj-cfK"/>
+                                    <constraint firstAttribute="width" constant="131" id="7HP-pD-WBs"/>
+                                    <constraint firstAttribute="height" constant="131" id="hUH-lb-p5R"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4G-sn-rcr">
+                                <rect key="frame" x="0.0" y="266" width="393" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="K2V-lL-Yk1"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Adres Bilgileri"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGd-La-vaP">
+                                <rect key="frame" x="0.0" y="338" width="393" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="TTd-6I-t2q"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Email Guncelle"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56z-Wl-REY">
+                                <rect key="frame" x="0.0" y="410" width="393" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="DfP-1A-Z5A"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Sifre Guncelle"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xm-9l-wGz">
+                                <rect key="frame" x="0.0" y="194" width="393" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="zrm-N2-Gzy"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Kullanici Bilgileri"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fJd-c7-P2A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="L4h-Ho-hqV" firstAttribute="top" secondItem="fJd-c7-P2A" secondAttribute="top" constant="7" id="Dhb-RR-0bu"/>
-                            <constraint firstItem="L4h-Ho-hqV" firstAttribute="leading" secondItem="fJd-c7-P2A" secondAttribute="leading" constant="131" id="Llj-Ty-HOz"/>
-                            <constraint firstItem="L4h-Ho-hqV" firstAttribute="centerX" secondItem="ct0-vl-Qzn" secondAttribute="centerX" id="UdF-uS-DwS"/>
-                            <constraint firstItem="L4h-Ho-hqV" firstAttribute="centerX" secondItem="WJc-UD-Qk7" secondAttribute="centerX" id="f6H-fM-Jr2"/>
-                            <constraint firstItem="WJc-UD-Qk7" firstAttribute="bottom" secondItem="fJd-c7-P2A" secondAttribute="bottom" id="iem-dQ-Q5s"/>
+                            <constraint firstItem="WJc-UD-Qk7" firstAttribute="bottom" secondItem="fJd-c7-P2A" secondAttribute="bottom" id="16T-pn-pPG"/>
+                            <constraint firstItem="8Xm-9l-wGz" firstAttribute="trailing" secondItem="fJd-c7-P2A" secondAttribute="trailing" id="2k1-p6-hek"/>
+                            <constraint firstItem="56z-Wl-REY" firstAttribute="leading" secondItem="fJd-c7-P2A" secondAttribute="leading" id="9ws-zp-5mR"/>
+                            <constraint firstItem="WJc-UD-Qk7" firstAttribute="centerX" secondItem="ct0-vl-Qzn" secondAttribute="centerX" id="Djj-SS-niy"/>
+                            <constraint firstItem="nGd-La-vaP" firstAttribute="trailing" secondItem="fJd-c7-P2A" secondAttribute="trailing" id="Icg-nY-o2Q"/>
+                            <constraint firstItem="56z-Wl-REY" firstAttribute="top" secondItem="nGd-La-vaP" secondAttribute="bottom" constant="20" id="JBb-hc-gvc"/>
+                            <constraint firstItem="X4G-sn-rcr" firstAttribute="trailing" secondItem="fJd-c7-P2A" secondAttribute="trailing" id="UcS-6L-pOA"/>
+                            <constraint firstItem="X4G-sn-rcr" firstAttribute="top" secondItem="8Xm-9l-wGz" secondAttribute="bottom" constant="20" id="aAm-Au-SaQ"/>
+                            <constraint firstItem="L4h-Ho-hqV" firstAttribute="top" secondItem="fJd-c7-P2A" secondAttribute="top" constant="7" id="ckb-JZ-RSr"/>
+                            <constraint firstItem="L4h-Ho-hqV" firstAttribute="leading" secondItem="fJd-c7-P2A" secondAttribute="leading" constant="131" id="gDI-C1-Bpj"/>
+                            <constraint firstItem="fJd-c7-P2A" firstAttribute="trailing" secondItem="L4h-Ho-hqV" secondAttribute="trailing" constant="131" id="kIK-W7-dZf"/>
+                            <constraint firstItem="8Xm-9l-wGz" firstAttribute="top" secondItem="L4h-Ho-hqV" secondAttribute="bottom" constant="56" id="muX-84-UZe"/>
+                            <constraint firstItem="8Xm-9l-wGz" firstAttribute="leading" secondItem="fJd-c7-P2A" secondAttribute="leading" id="nFc-ey-EZY"/>
+                            <constraint firstItem="56z-Wl-REY" firstAttribute="trailing" secondItem="fJd-c7-P2A" secondAttribute="trailing" id="p0r-Gu-B1A"/>
+                            <constraint firstItem="nGd-La-vaP" firstAttribute="top" secondItem="X4G-sn-rcr" secondAttribute="bottom" constant="20" id="tb3-4N-sCf"/>
+                            <constraint firstItem="X4G-sn-rcr" firstAttribute="leading" secondItem="fJd-c7-P2A" secondAttribute="leading" id="xFx-Mo-65P"/>
+                            <constraint firstItem="nGd-La-vaP" firstAttribute="leading" secondItem="fJd-c7-P2A" secondAttribute="leading" id="zdZ-vt-PMx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" id="jag-66-m63"/>
@@ -818,6 +864,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
