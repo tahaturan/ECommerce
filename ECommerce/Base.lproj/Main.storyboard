@@ -182,6 +182,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Orp-sF-9AU">
+                                <rect key="frame" x="312" y="386" width="56" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="closedEyeIcon"/>
+                                <connections>
+                                    <action selector="passwordHiddenButtonClicked:" destination="1VG-k3-X1a" eventType="touchUpInside" id="2se-ak-npt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SpC-LZ-vQ3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -205,6 +214,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Oaa-V2-UP7" id="IFj-sr-mhi"/>
                         <outlet property="nameTextField" destination="DfG-l5-NZ2" id="NNa-V4-3wg"/>
+                        <outlet property="passwordHiddenButton" destination="Orp-sF-9AU" id="vBg-Gm-5ns"/>
                         <outlet property="passwordTextField" destination="dJa-UN-w2k" id="LRe-AR-C7R"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="SignUpToLoginVC" modalPresentationStyle="fullScreen" id="PNZ-Jr-EYp"/>
                     </connections>
@@ -916,12 +926,13 @@
     <inferredMetricsTieBreakers>
         <segue reference="Zd9-Jb-M8H"/>
         <segue reference="akS-k6-WuT"/>
-        <segue reference="1AE-S2-bX1"/>
+        <segue reference="PNZ-Jr-EYp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="appleIcon" width="32" height="32"/>
         <image name="basketIcon" width="32" height="32"/>
         <image name="categoriesIcon" width="32" height="32"/>
+        <image name="closedEyeIcon" width="32" height="32"/>
         <image name="electronics" width="960" height="225"/>
         <image name="googleIcon" width="24" height="24"/>
         <image name="homeIcon" width="32" height="32"/>

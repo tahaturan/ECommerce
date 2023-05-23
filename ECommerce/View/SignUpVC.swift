@@ -16,12 +16,14 @@ class SignUpVC: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     
+    @IBOutlet weak var passwordHiddenButton: UIButton!
     
+    var ishidden = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+       
+       
     }
     
     
@@ -30,6 +32,14 @@ class SignUpVC: UIViewController {
         signUpFirebase()
         
     }
+    
+    
+    @IBAction func passwordHiddenButtonClicked(_ sender: Any) {
+        ishidden = !ishidden
+        passwordHiddenButton.setImage(UIImage(named: ishidden ? "closedEyeIcon.png":"eyeIcon.png"), for: .normal)
+        passwordTextField.isSecureTextEntry = ishidden ? true : false
+    }
+    
 }
 
 //MARK: - Firebase SignUp islemleri
