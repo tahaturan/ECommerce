@@ -20,7 +20,7 @@ class ProfilePageVC: UIViewController {
         profileImageView.layer.masksToBounds = true
         profileImageView.layer.cornerRadius = imageWitdh / 2
         
-        let user = Auth.auth().currentUser
+        
         
         
         

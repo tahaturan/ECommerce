@@ -15,7 +15,10 @@ class UserSingleton {
     var email = ""
     var name = ""
     var userimage = ""
-    
+    var userCity = ""
+    var userPhone = ""
+    var userCountry = ""
+    var userAddress = ""
     
     private init(){
         
