@@ -135,7 +135,9 @@ extension BasketPageVC{
                                     self.userProductList.append(ProductViewModel(productModel: createProduct))
                                     self.tabBarItem.badgeValue = String(self.userProductList.count)
                                     self.totalPrice = self.totalPriceCalculate()
-                                    let buttonString:String = "Confirm Cart -> \(self.totalPrice)"
+                                    let value = self.totalPrice
+                                    let roundetValue = (value * 10) / 10.0
+                                    let buttonString:String = "Confirm Cart -> \(roundetValue)"
                                     self.confirmCardButton.isHidden = false
                                     self.confirmCardButton.setTitle(buttonString, for: UIControl.State.normal)
                                 }
