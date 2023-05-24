@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class UserInfoVC: UIViewController {
     
@@ -28,7 +29,7 @@ class UserInfoVC: UIViewController {
 
 
 //MARK: - Design
-extension UserInfoVC {
+extension UserInfoVC: UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     func viewDesign()  {
         userImageView.layer.masksToBounds = true
         userImageView.layer.cornerRadius = userImageView.frame.height / 2
@@ -38,7 +39,38 @@ extension UserInfoVC {
         userEmailLabel.text = "Email: \(UserSingleton.sharedUserInfo.email)"
         
         
+        userImageView.isUserInteractionEnabled = true
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+        userImageView.addGestureRecognizer(gestureRecognizer)
         
  
+    }
+    
+    
+   @objc  func selectImage()  {
+        let picker = UIImagePickerController()
+       picker.delegate = self
+       picker.sourceType = .photoLibrary
+       self.present(picker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        userImageView.image = info[.originalImage] as? UIImage
+        self.dismiss(animated: true)
+    }
+}
+
+
+//MARK: -imageUplod islemleri firebase
+extension UserInfoVC{
+    func changeProfileImage()  {
+        let storage = Storage.storage()
+        
+        let storageReference = storage.reference()
+        
+        let userProfileImage = storageReference.child("userProfileImage")
+        
+        
     }
 }
