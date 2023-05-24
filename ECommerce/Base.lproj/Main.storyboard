@@ -345,14 +345,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcJ-f2-jeZ">
+                                <rect key="frame" x="80" y="496" width="233" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Kaydet"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="92z-Or-AQe" eventType="touchUpInside" id="6ml-Fl-rKA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iOk-FI-bAH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="iOk-FI-bAH" firstAttribute="trailing" secondItem="fcJ-f2-jeZ" secondAttribute="trailing" constant="80" id="3fq-VJ-5Vk"/>
                             <constraint firstItem="Yyu-T8-zk5" firstAttribute="leading" secondItem="iOk-FI-bAH" secondAttribute="leading" constant="16" id="64h-SI-rO4"/>
                             <constraint firstItem="EVS-gV-Mdg" firstAttribute="leading" secondItem="iOk-FI-bAH" secondAttribute="leading" constant="16" id="Kmb-T9-TQ1"/>
                             <constraint firstItem="iOk-FI-bAH" firstAttribute="trailing" secondItem="Yyu-T8-zk5" secondAttribute="trailing" constant="16" id="PY8-Wi-UTq"/>
+                            <constraint firstItem="fcJ-f2-jeZ" firstAttribute="leading" secondItem="iOk-FI-bAH" secondAttribute="leading" constant="80" id="Q46-yr-gzj"/>
                             <constraint firstItem="Yyu-T8-zk5" firstAttribute="top" secondItem="alx-3t-piY" secondAttribute="bottom" constant="39" id="Qxl-NM-PWg"/>
+                            <constraint firstItem="fcJ-f2-jeZ" firstAttribute="top" secondItem="EVS-gV-Mdg" secondAttribute="bottom" constant="63" id="U0z-XU-dYd"/>
                             <constraint firstItem="iOk-FI-bAH" firstAttribute="trailing" secondItem="EVS-gV-Mdg" secondAttribute="trailing" constant="16" id="W85-QP-HWl"/>
                             <constraint firstItem="Yyu-T8-zk5" firstAttribute="top" secondItem="alx-3t-piY" secondAttribute="bottom" constant="39" id="WVQ-cd-JxL"/>
                             <constraint firstItem="alx-3t-piY" firstAttribute="centerX" secondItem="Yyu-T8-zk5" secondAttribute="centerX" id="ZQz-zZ-Na5"/>

@@ -25,6 +25,13 @@ class UserInfoVC: UIViewController {
         viewDesign()
         
     }
+    
+    
+    @IBAction func saveButtonClicked(_ sender: Any) {
+        changeProfileImage()
+    }
+    
+    
 }
 
 
@@ -71,6 +78,52 @@ extension UserInfoVC{
         
         let userProfileImage = storageReference.child("userProfileImage")
         
-        
+        if let data = userImageView.image?.jpegData(compressionQuality: 0.5){
+            
+            let uuid = UUID().uuidString
+            
+            let imageReference = userProfileImage.child("\(uuid).jpg")
+            imageReference.putData(data) { metadata , error in
+                if error != nil {
+                    ApplicationConstants.makeAlert(title: "ERROR", message: error?.localizedDescription ?? "Error", viewController: self)
+                }else{
+                    
+                    imageReference.downloadURL { url, error in
+                        if error == nil {
+                            let imageUrl = url?.absoluteString
+                            
+                            let fireStore = Firestore.firestore()
+                            let userInfoDict = ["userimage":imageUrl!] as [String : Any]
+                            
+                            fireStore.collection("UserInfo").whereField("userid", isEqualTo: UserSingleton.sharedUserInfo.userid).addSnapshotListener { snapshot , error in
+                                if error != nil {
+                                    ApplicationConstants.makeAlert(title: "ERROR", message: error?.localizedDescription ?? "Error", viewController: self)
+                                }else{
+                                    
+                                    if snapshot?.isEmpty == false && snapshot != nil {
+                                        
+                                        for document in snapshot!.documents {
+                                            let documentId = document.documentID
+                                            
+                                            fireStore.collection("UserInfo").document(documentId).setData(userInfoDict, merge: true)
+                                            
+                                            UserSingleton.sharedUserInfo.userimage = imageUrl!
+                                        }
+                                        
+                                    }
+                                    
+                                    
+                                    
+                                }
+                            }
+                            
+                        }
+                    }
+                    
+                    
+                }
+            }
+            
+        }
     }
 }

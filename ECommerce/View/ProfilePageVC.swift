@@ -20,14 +20,12 @@ class ProfilePageVC: UIViewController {
         profileImageView.layer.masksToBounds = true
         profileImageView.layer.cornerRadius = imageWitdh / 2
         
-        
-        
-        
-        
     }
     
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+        profileImageView.sd_setImage(with: URL(string: UserSingleton.sharedUserInfo.userimage))
+    }
     
     
     @IBAction func logOutButtonClicked(_ sender: Any) {
