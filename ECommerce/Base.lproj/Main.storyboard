@@ -68,25 +68,8 @@
                                     <action selector="googleLoginButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sea-Nr-Huh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUe-Wd-xZF">
-                                <rect key="frame" x="20" y="446" width="353" height="45"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="9Ae-rL-8Eh"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="Dpj-LC-QBJ"/>
-                                    <constraint firstAttribute="height" constant="45" id="ZjX-TN-uag"/>
-                                </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
-                                <state key="normal" title="Login" image="appleIcon">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="appleLoginButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OBA-d3-Le8"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8O-Cf-KwW">
-                                <rect key="frame" x="152.66666666666666" y="526" width="88" height="27"/>
+                                <rect key="frame" x="152.66666666666666" y="526" width="87.666666666666657" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Create Account"/>
@@ -99,11 +82,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sUe-Wd-xZF" secondAttribute="trailing" constant="20" id="4AP-KT-Yed"/>
+                            <constraint firstItem="e8O-Cf-KwW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152.66666666666666" id="BVn-Qn-iiF"/>
                             <constraint firstItem="vJ4-zm-oGS" firstAttribute="top" secondItem="JUd-z7-99d" secondAttribute="bottom" constant="30" id="D06-js-4tj"/>
                             <constraint firstItem="SyX-qG-cPd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ESv-Oh-2tL"/>
                             <constraint firstItem="JUd-z7-99d" firstAttribute="top" secondItem="qdC-gs-qmL" secondAttribute="bottom" constant="45" id="IpY-eT-Tq8"/>
-                            <constraint firstItem="sUe-Wd-xZF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="M38-Dg-Qxl"/>
                             <constraint firstItem="qdC-gs-qmL" firstAttribute="top" secondItem="SyX-qG-cPd" secondAttribute="bottom" constant="40" id="PMf-eh-n90"/>
                             <constraint firstItem="dqg-Y1-uPd" firstAttribute="top" secondItem="vJ4-zm-oGS" secondAttribute="bottom" constant="30" id="bRL-ZX-AO7"/>
                             <constraint firstItem="SyX-qG-cPd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="cl9-ue-Eof"/>
@@ -111,12 +93,11 @@
                             <constraint firstItem="vJ4-zm-oGS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lCb-7h-dnZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vJ4-zm-oGS" secondAttribute="trailing" constant="20" id="lag-vn-SBC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qdC-gs-qmL" secondAttribute="trailing" constant="20" id="nZc-W7-V2a"/>
-                            <constraint firstItem="sUe-Wd-xZF" firstAttribute="top" secondItem="dqg-Y1-uPd" secondAttribute="bottom" constant="30" id="nq1-SM-jId"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dqg-Y1-uPd" secondAttribute="trailing" constant="20" id="omP-5c-vu3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e8O-Cf-KwW" secondAttribute="bottom" constant="299" id="pbV-lh-tMU"/>
                             <constraint firstItem="JUd-z7-99d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="t52-lg-mhU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JUd-z7-99d" secondAttribute="trailing" constant="20" id="tAw-Hm-W33"/>
                             <constraint firstItem="dqg-Y1-uPd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tf3-Cn-qe9"/>
-                            <constraint firstItem="e8O-Cf-KwW" firstAttribute="top" secondItem="sUe-Wd-xZF" secondAttribute="bottom" constant="35" id="ugs-hd-PX5"/>
                             <constraint firstItem="qdC-gs-qmL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vgU-8z-c8p"/>
                         </constraints>
                     </view>
@@ -258,22 +239,6 @@
                                     <segue destination="51M-Xw-Unn" kind="show" id="f3y-uc-QdB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGd-La-vaP">
-                                <rect key="frame" x="0.0" y="382" width="393" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="TTd-6I-t2q"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Email Guncelle"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56z-Wl-REY">
-                                <rect key="frame" x="0.0" y="454" width="393" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="DfP-1A-Z5A"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Sifre Guncelle"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xm-9l-wGz">
                                 <rect key="frame" x="0.0" y="238" width="393" height="52"/>
                                 <constraints>
@@ -291,10 +256,7 @@
                         <constraints>
                             <constraint firstItem="WJc-UD-Qk7" firstAttribute="bottom" secondItem="fJd-c7-P2A" secondAttribute="bottom" id="16T-pn-pPG"/>
                             <constraint firstItem="8Xm-9l-wGz" firstAttribute="trailing" secondItem="fJd-c7-P2A" secondAttribute="trailing" id="2k1-p6-hek"/>
-                            <constraint firstItem="56z-Wl-REY" firstAttribute="leading" secondItem="fJd-c7-P2A" secondAttribute="leading" id="9ws-zp-5mR"/>
                             <constraint firstItem="WJc-UD-Qk7" firstAttribute="centerX" secondItem="ct0-vl-Qzn" secondAttribute="centerX" id="Djj-SS-niy"/>
-                            <constraint firstItem="nGd-La-vaP" firstAttribute="trailing" secondItem="fJd-c7-P2A" secondAttribute="trailing" id="Icg-nY-o2Q"/>
-                            <constraint firstItem="56z-Wl-REY" firstAttribute="top" secondItem="nGd-La-vaP" secondAttribute="bottom" constant="20" id="JBb-hc-gvc"/>
                             <constraint firstItem="X4G-sn-rcr" firstAttribute="trailing" secondItem="fJd-c7-P2A" secondAttribute="trailing" id="UcS-6L-pOA"/>
                             <constraint firstItem="X4G-sn-rcr" firstAttribute="top" secondItem="8Xm-9l-wGz" secondAttribute="bottom" constant="20" id="aAm-Au-SaQ"/>
                             <constraint firstItem="L4h-Ho-hqV" firstAttribute="top" secondItem="fJd-c7-P2A" secondAttribute="top" constant="7" id="ckb-JZ-RSr"/>
@@ -302,10 +264,7 @@
                             <constraint firstItem="fJd-c7-P2A" firstAttribute="trailing" secondItem="L4h-Ho-hqV" secondAttribute="trailing" constant="131" id="kIK-W7-dZf"/>
                             <constraint firstItem="8Xm-9l-wGz" firstAttribute="top" secondItem="L4h-Ho-hqV" secondAttribute="bottom" constant="56" id="muX-84-UZe"/>
                             <constraint firstItem="8Xm-9l-wGz" firstAttribute="leading" secondItem="fJd-c7-P2A" secondAttribute="leading" id="nFc-ey-EZY"/>
-                            <constraint firstItem="56z-Wl-REY" firstAttribute="trailing" secondItem="fJd-c7-P2A" secondAttribute="trailing" id="p0r-Gu-B1A"/>
-                            <constraint firstItem="nGd-La-vaP" firstAttribute="top" secondItem="X4G-sn-rcr" secondAttribute="bottom" constant="20" id="tb3-4N-sCf"/>
                             <constraint firstItem="X4G-sn-rcr" firstAttribute="leading" secondItem="fJd-c7-P2A" secondAttribute="leading" id="xFx-Mo-65P"/>
-                            <constraint firstItem="nGd-La-vaP" firstAttribute="leading" secondItem="fJd-c7-P2A" secondAttribute="leading" id="zdZ-vt-PMx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rlx-c3-Xlb"/>
