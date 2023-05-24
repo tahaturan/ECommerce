@@ -54,7 +54,7 @@ extension SignUpVC{
                     
                     let fireStore = Firestore.firestore()
                     let user = Auth.auth().currentUser
-                    let userDictionary = ["userid":user!.uid,"email":self.emailTextField.text! , "name":self.nameTextField.text! , "userimage":ApplicationConstants.defaultImageUrl , "userCity":"" , "userPhone":"" , "userCountry":"" , "userAddress":""] as [String : Any]
+                    let userDictionary = ["userid":user!.uid,"email":self.emailTextField.text! , "name":self.nameTextField.text! , "userimage":ApplicationConstants.defaultImageUrl , "userCity":"Bilgi Girilmemis" , "userPhone":"Bilgi Girilmemis" , "userCountry":"Bilgi Girilmemis" , "userAddress":"Bilgi Girilmemis"] as [String : Any]
                     
                     fireStore.collection("UserInfo").addDocument(data: userDictionary)
                     

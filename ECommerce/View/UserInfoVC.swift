@@ -108,6 +108,8 @@ extension UserInfoVC{
                                             fireStore.collection("UserInfo").document(documentId).setData(userInfoDict, merge: true)
                                             
                                             UserSingleton.sharedUserInfo.userimage = imageUrl!
+                                            
+                                            ApplicationConstants.makeAlert(title: "basarili", message: "basarili", viewController: self)
                                         }
                                         
                                     }

@@ -100,7 +100,7 @@ extension LogInPageVC{
                     let fireStore = Firestore.firestore()
                     let userId = Auth.auth().currentUser?.uid
                     let userImage = Auth.auth().currentUser?.photoURL?.absoluteString
-                    let userDictionary = ["userid":userId!,"email":user.profile!.email, "name":user.profile!.name , "userimage":userImage! , "userCity":"" , "userPhone":"" , "userCountry":"" , "userAddress":""] as [String : Any]
+                    let userDictionary = ["userid":userId!,"email":user.profile!.email, "name":user.profile!.name , "userimage":userImage! , "userCity":"Bilgi Girilmemis" , "userPhone":"Bilgi Girilmemis" , "userCountry":"Bilgi Girilmemis" , "userAddress":"Bilgi Girilmemis"] as [String : Any]
                     
                     fireStore.collection("UserInfo").addDocument(data: userDictionary)
       

@@ -191,11 +191,23 @@ extension HomePageVC{
                         if let userName = document.get("name") as? String {
                             if let userEmail = document.get("email") as? String {
                                 if let userImage = document.get("userimage") as? String {
-                                    if let userId = document.get("userid") as? String {
-                                        UserSingleton.sharedUserInfo.name = userName
-                                        UserSingleton.sharedUserInfo.email = userEmail
-                                        UserSingleton.sharedUserInfo.userimage = userImage
-                                        UserSingleton.sharedUserInfo.userid = userId
+                                    if document.get("userid") is String {
+                                        if let userCountry = document.get("userCountry") as? String {
+                                            if let userPhone = document.get("userPhone") as? String {
+                                                if let userCity = document.get("userCity") as? String {
+                                                    if let userAddress = document.get("userAddress") as? String {
+                                                        UserSingleton.sharedUserInfo.name = userName
+                                                        UserSingleton.sharedUserInfo.email = userEmail
+                                                        UserSingleton.sharedUserInfo.userimage = userImage
+                                                        UserSingleton.sharedUserInfo.userCountry = userCountry
+                                                        UserSingleton.sharedUserInfo.userCity = userCity
+                                                        UserSingleton.sharedUserInfo.userAddress = userAddress
+                                                        UserSingleton.sharedUserInfo.userPhone = userPhone
+                                                        UserSingleton.sharedUserInfo.userid = currentUser!.uid
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
