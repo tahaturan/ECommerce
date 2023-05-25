@@ -30,8 +30,6 @@ class LogInPageVC: UIViewController {
     }
     
     
-    @IBAction func appleLoginButtonClicked(_ sender: Any) {
-    }
     
 
     
