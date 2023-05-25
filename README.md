@@ -2,7 +2,6 @@
 <img src="imagesReadme/1.jpg">
 <img src="imagesReadme/2.jpg">
 <img src="imagesReadme/3.jpg">
-<img src="imagesReadme/4.jpg">
 <img src="imagesReadme/5.jpg">
 <img src="imagesReadme/6.jpg">
 <img src="imagesReadme/7.jpg">
