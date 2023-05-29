@@ -1,4 +1,4 @@
-# FoursquareClone
+# ECommerce
 <img src="imagesReadme/1.jpg">
 <img src="imagesReadme/2.jpg">
 <img src="imagesReadme/3.jpg">
